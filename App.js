@@ -13,12 +13,21 @@
  */
 
 import React from "react";
-import { StyleSheet, Text, View, SafeAreaView } from "react-native";
+import { SafeAreaView } from "react-native";
 import { useKeepAwake } from "expo-keep-awake";
-import { Provider as PaperProvider } from "react-native-paper";
+import { Provider as PaperProvider, DefaultTheme } from "react-native-paper";
 
 import { RootProvider } from "./RootContext";
 import Root from "./Root";
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+
+    primary: `#c03`,
+  },
+};
 
 export default function App() {
   useKeepAwake();
